@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto';
 }
 :root {
     --color_1: #99E2D0;
@@ -8,11 +9,10 @@
     --color_3: #89C8FA;
     --color_4: #003A68;
     --color_5: #9356DC;
+    font-family: 'Roboto';
 }
 body {
-    border: solid;
     width: auto;
-    font-family: "Roboto";
 }
 h2 {
     font-size: 18px;
@@ -40,7 +40,6 @@ a {
 .pinkbtn {
     color: white;
     padding: 13px 18.75px;
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -99,7 +98,7 @@ a {
 .reservation__btn {
     color: white;
     padding: 13px 18.75px;
-    font-family: 'Roboto';
+    
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -117,7 +116,6 @@ a {
     color: var(--color_2);
     background-color: var(--color_1);
     padding: 7px 9px;
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -153,6 +151,7 @@ a {
     border-radius: 20px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
     margin-bottom: 24px;
+    align-items: center;
 }
 .functioning_h1 {
     margin: 48px 0 26px 0;
@@ -171,6 +170,16 @@ a {
 .functioning__container__btncontainer__btn__icon {
     margin-right: 20px;
     color: #7E7E7E;
+}
+.--phone {
+    font-size: 20px;
+}
+.--list {
+    font-size: 16px;
+}
+.--store {
+    font-size: 18px;
+    color: var(--color_5); 
 }
 .fa-store {
     color: var(--color_5);
@@ -247,15 +256,16 @@ footer a {
     display: flex;
     flex-direction: column;
 }
-.--marginright {
+.--marginajust {
     margin-right: 10px;
+    margin-bottom: 6px;
 }
 
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) {
 
 .restaurants__cardscontainer__cards__img {
-    height: 300px;
+    height: 250px;
 }
 footer {
     text-align: center;
@@ -299,6 +309,9 @@ footer {
 .restaurants__cardscontainer {
     display: grid;
     gap: 90px;
+}
+.restaurants__cardscontainer__cards__img {
+    height: 154px;
 }
 .grid_element_1 {
     grid-column: 1/2;

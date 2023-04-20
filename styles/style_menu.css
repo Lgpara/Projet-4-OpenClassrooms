@@ -25,9 +25,10 @@ h2 {
 }
 
 .nav_arrow {
+    height: 16px;
     position: absolute;
     left: 24px;
-    top: 20px;
+    top: 22px;
     font-size: 16px;
     color: black;
 }
