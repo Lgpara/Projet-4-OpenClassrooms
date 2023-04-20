@@ -9,14 +9,11 @@
     --color_3: #89C8FA;
     --color_4: #003A68;
     --color_5: #9356DC;
-    font-family: 'Roboto';
-}
-body {
-    width: auto;
 }
 h2 {
     font-size: 18px;
     line-height: 21px;
+    font-weight: 700px;
 }
 p {
     font-size: 17px;
@@ -181,9 +178,7 @@ a {
     font-size: 18px;
     color: var(--color_5); 
 }
-.fa-store {
-    color: var(--color_5);
-}
+
 
 .restaurants {
     padding: 54px 20px 66px 20px;
