@@ -1,4 +1,5 @@
 /* Variables */
+/*Mixin*/
 /*General*/
 h1 {
   font-family: "Shrikhand";
@@ -112,6 +113,16 @@ main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodin
 }
 
 .pink_button {
+  color: white;
+  padding: 13px 18.75px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  background: linear-gradient(355deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  border: none;
   margin: 40px auto 0px auto;
   width: 154px;
   padding: 13px 16px;

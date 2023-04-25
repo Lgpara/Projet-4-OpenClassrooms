@@ -3,6 +3,21 @@
 $tablet: "screen and (min-width: 768px)";
 $desktop: "screen and (min-width: 1024px)";
 
+/*Mixin*/ 
+
+@mixin pinkbutton {
+    color: white;
+    padding: 13px 18.75px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    background: linear-gradient(355deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    border: none;
+}
+
 /*General*/
 
 h1 {
@@ -107,6 +122,7 @@ main {
     }
 }
 .pink_button {
+    @include pinkbutton();
     margin: 40px auto 0px auto;
     width: 154px;
     padding: 13px 16px;
