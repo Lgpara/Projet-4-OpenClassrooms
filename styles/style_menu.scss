@@ -1,4 +1,10 @@
 /* Variables */
+$color_1: #99E2D0;
+$color_2: #008766;
+$color_3: #89C8FA;
+$color_4: #003A68;
+$color_5: #9356DC;
+$test: linear-gradient(to top, #b375e1, #c279e1, #d07de1, #dd81e0, #e986e0);
 
 $tablet: "screen and (min-width: 768px)";
 $desktop: "screen and (min-width: 1024px)";
@@ -12,7 +18,7 @@ $desktop: "screen and (min-width: 1024px)";
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    background: linear-gradient(355deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+    background-image: linear-gradient(to top, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     border: none;
@@ -39,7 +45,7 @@ h2 {
 .green_line {
     height: 4px;
     width: 40px;
-    background-color: var(--color_1);
+    background-color: $color_1;
     margin-top: 14px;
 }
 
@@ -49,7 +55,7 @@ h2 {
     height: 16px;
     position: absolute;
     left: 24px;
-    top: 22px;
+    top: 40px;
     font-size: 16px;
     color: black;
 
@@ -117,6 +123,15 @@ main {
             margin: 0px 17px 42px 17px;
             align-items: baseline;
             padding-top: 32px;
+            @media #{$desktop} {
+                justify-content: center;
+                align-items: center;
+            }
+            .heart_icon {
+                font-size: 21px;
+                margin-left: 24px;
+            }
+    
         }
 
         .restaurantcard__foodlist {
@@ -126,11 +141,40 @@ main {
                 margin: 12px 0px;
                 border-radius: 15px;
                 box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
-
+                height: 48px;
+                overflow: hidden;
+                &::after {
+                    content: "";
+                    transition: transform 0.2s ease;
+                }
+                &:hover::after {
+                    display: flex;
+                    font-size: 25px;
+                    align-items: center;
+                    justify-content: center;
+                    content: "\f058";
+                    font-family: "Font Awesome 5 Free";
+                    color: white;
+                    height: 72px;
+                    width: 72px;
+                    background-color: $color_1;
+                    box-sizing: border-box;
+                    position: relative;
+                    top: -60px;
+                    left: calc(100% + 15px);
+                    transform: translate(-72px, 0);
+                }
+                &:hover .restaurantcard__foodlist__foodinfos__details .price {
+                    transform: translate(-72px, 0);
+                }
                 .restaurantcard__foodlist__foodinfos__details {
                     display: flex;
                     justify-content: space-between;
                     margin-top: 5px;
+                    .price {
+                        transform: translate(0);
+                        transition: transform 0.2s ease;
+                    }
                 }
             }
         }
@@ -143,4 +187,10 @@ main {
     width: 154px;
     padding: 13px 16px;
     text-align: center;
+    transition: all 0.2s ease;
+    &:hover {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+        opacity: 0.9;
+        transform: scale(1.01); 
+    }
 }
