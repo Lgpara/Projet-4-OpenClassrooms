@@ -9,6 +9,7 @@ $color_5: #9356DC;
 $tablet: "screen and (min-width: 768px)";
 $desktop: "screen and (min-width: 1024px)";
 
+$test: linear-gradient(to top, #b375e1, #c279e1, #d07de1, #dd81e0, #e986e0);
 /* Mixin */
 
 @mixin pinkbutton {
@@ -18,7 +19,7 @@ $desktop: "screen and (min-width: 1024px)";
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    background: linear-gradient(355deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+    background-image: linear-gradient(to top, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     border: none;
@@ -126,12 +127,19 @@ header {
     .reservation__btn {
         @include pinkbutton();
         margin-bottom: 57px;
+        &:hover {
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35); 
+            background: $test;
+        }
 
         @media #{$desktop} {
             margin-bottom: 30px;
         }
     }
 }
+
+
+
 
 /* Functionning */
 
@@ -295,10 +303,35 @@ header {
                 .restaurants__cardscontainer__cards__infos__txt {
                     margin: 0px 25px 0 13px;
                 }
-
-                .restaurants__cardscontainer__cards__infos__icon {
-                    font-size: 21px !important;
-                }
+                .restaurants__cardscontainer__cards__infos__iconcontainer {
+                    padding: 4px 20px 0 0;
+                    .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox {
+                        width: fit-content;
+                        height: fit-content;
+                        position: absolute;
+                        background-color: white;
+                        z-index: 1;
+                        &:hover {
+                            opacity: 0;
+                        }
+                        .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox__icon {
+                            font-size: 25px !important;
+                        }
+                    }
+                    .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox__icon {
+                        width: fit-content;
+                        height: fit-content;
+                        position: absolute;
+                        z-index: 0;
+                        .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox__icon {
+                            font-size: 25px !important;
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            color: transparent;
+                            background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);                           
+                        }    
+                    }
+                }    
             }
         }
     }

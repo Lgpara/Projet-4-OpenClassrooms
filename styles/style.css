@@ -84,11 +84,15 @@ header .header__location .header__location__icon {
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  background: linear-gradient(355deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  background-image: linear-gradient(to top, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   border: none;
   margin-bottom: 57px;
+}
+.reservation .reservation__btn:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(to top, #b375e1, #c279e1, #d07de1, #dd81e0, #e986e0);
 }
 @media screen and (min-width: 1024px) {
   .reservation .reservation__btn {
@@ -267,8 +271,38 @@ header .header__location .header__location__icon {
 .restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__txt {
   margin: 0px 25px 0 13px;
 }
-.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__icon {
-  font-size: 21px !important;
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer {
+  padding: 4px 20px 0 0;
+}
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+}
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox:hover {
+  opacity: 0;
+}
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox__icon {
+  font-size: 25px !important;
+}
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox__icon {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  z-index: 0;
+}
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox__icon .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox__icon {
+  font-size: 25px !important;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
 }
 
 footer {
