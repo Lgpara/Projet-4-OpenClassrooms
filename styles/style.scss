@@ -67,56 +67,17 @@ a {
 }
 
 
-
-.loader {
-    display: block;
-    width: 100%;
-    height: 160%;
-    position: absolute;
-    background-color: lighten($color_5, 27%);
-    z-index: 99;
-    opacity: 0.96;
-    animation: close 1.5s cubic-bezier(.95,.03,.96,.1) forwards;
-    p {
-        color: lighten($color_5, $amount: 28%);
-        margin-top: 200px;
-        font-size: 18vw;
-        font-family: "Shrikhand";
-        text-align: center;
-        text-shadow: lighten($color_5, 28%) 0px 0px 30px;
-        animation: pulse 1s ease-in-out;
-
-    }
-    i {
-        color: lighten($color_5, $amount: 27%);
-        margin-top: 160px;
-        font-size: 8vw;
-
-        margin-left: 46%;
-    }
-}
-@keyframes pulse {
-    to {
-        text-shadow: rgba(255, 71, 230, 0.055) 0px 0px 300px;
-    }
-}
-@keyframes close {
-    to {
-        opacity: 0;
-        display: none;
-    }
-}
-
-
 .blocpage {
+    transform: scale(1.2);
     filter: grayscale(1) blur(30px);
-    animation: blur-out 0.8s ease-in-out forwards;
+    animation: blur-out 0.5s ease-in-out forwards;
 }
 
 
 @keyframes blur-out {
     to {
-        filter: grayscale(0) blur(0);
+        filter: grayscale(0) blur();
+        transform: scale(1);
     }
 }
 
@@ -184,9 +145,10 @@ header {
     .reservation__btn {
         @include pinkbutton();
         margin-bottom: 57px;
-        transition: all 0.2s ease;
+        transform: scale(1);
+        transition: all 0.22s ease-in-out;
         &:hover {
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.35);
             opacity: 0.8;
             transform: scale(1.01); 
         }
@@ -373,21 +335,26 @@ header {
                         &:hover {
                             opacity: 0;
                         }
+                        &:hover + .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox {
+                            opacity: 1;
+                        }  
                         .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox__icon {
                             font-size: 25px !important;
                         }
                     }
-                    .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox__icon {
+                    .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox {
                         width: fit-content;
                         height: fit-content;
                         position: absolute;
                         z-index: 0;
+                        opacity: 0.1;
+                        transition: opacity 0.35s ease-in-out;
                         .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox__icon {
                             font-size: 25px !important;
                             background-clip: text;
                             -webkit-background-clip: text;
                             color: transparent;
-                            background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);                           
+                            background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);                         
                         }    
                     }
                 }    

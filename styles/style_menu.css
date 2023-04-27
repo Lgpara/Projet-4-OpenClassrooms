@@ -95,7 +95,7 @@ main .restaurantcard {
 main .restaurantcard .restaurantcard__head {
   display: flex;
   justify-content: space-between;
-  margin: 0px 17px 42px 17px;
+  margin-bottom: 42px;
   align-items: baseline;
   padding-top: 32px;
 }

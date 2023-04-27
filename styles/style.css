@@ -26,51 +26,16 @@ a {
   font-weight: 900;
 }
 
-.loader {
-  display: block;
-  width: 100%;
-  height: 160%;
-  position: absolute;
-  background-color: #dcc8f4;
-  z-index: 99;
-  opacity: 0.96;
-  animation: close 1.5s cubic-bezier(0.95, 0.03, 0.96, 0.1) forwards;
-}
-.loader p {
-  color: #dfccf5;
-  margin-top: 200px;
-  font-size: 18vw;
-  font-family: "Shrikhand";
-  text-align: center;
-  text-shadow: #dfccf5 0px 0px 30px;
-  animation: pulse 1s ease-in-out;
-}
-.loader i {
-  color: #dcc8f4;
-  margin-top: 160px;
-  font-size: 8vw;
-  margin-left: 46%;
-}
-
-@keyframes pulse {
-  to {
-    text-shadow: rgba(255, 71, 230, 0.055) 0px 0px 300px;
-  }
-}
-@keyframes close {
-  to {
-    opacity: 0;
-    display: none;
-  }
-}
 .blocpage {
+  transform: scale(1.2);
   filter: grayscale(1) blur(30px);
-  animation: blur-out 0.8s ease-in-out forwards;
+  animation: blur-out 0.5s ease-in-out forwards;
 }
 
 @keyframes blur-out {
   to {
-    filter: grayscale(0) blur(0);
+    filter: grayscale(0) blur();
+    transform: scale(1);
   }
 }
 /* Header */
@@ -140,10 +105,11 @@ header .header__location .header__location__icon {
   border-radius: 25px;
   border: none;
   margin-bottom: 57px;
-  transition: all 0.2s ease;
+  transform: scale(1);
+  transition: all 0.22s ease-in-out;
 }
 .reservation .reservation__btn:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.35);
   opacity: 0.8;
   transform: scale(1.01);
 }
@@ -339,18 +305,23 @@ header .header__location .header__location__icon {
 .restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox:hover {
   opacity: 0;
 }
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox:hover + .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox {
+  opacity: 1;
+}
 .restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox__icon {
   font-size: 25px !important;
 }
-.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox__icon {
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox {
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
   position: absolute;
   z-index: 0;
+  opacity: 0.1;
+  transition: opacity 0.35s ease-in-out;
 }
-.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox__icon .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox__icon {
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox__icon {
   font-size: 25px !important;
   background-clip: text;
   -webkit-background-clip: text;

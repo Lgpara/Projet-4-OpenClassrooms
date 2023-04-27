@@ -23,8 +23,14 @@ $desktop: "screen and (min-width: 1024px)";
     border-radius: 25px;
     border: none;
 }
+@mixin nowrap_ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;    
+}
 
 /*General*/
+
 
 h1 {
     font-family: 'Shrikhand';
@@ -120,7 +126,7 @@ main {
         .restaurantcard__head {
             display: flex;
             justify-content: space-between;
-            margin: 0px 17px 42px 17px;
+            margin-bottom: 42px;
             align-items: baseline;
             padding-top: 32px;
             @media #{$desktop} {
