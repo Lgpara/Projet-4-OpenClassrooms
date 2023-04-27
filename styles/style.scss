@@ -76,7 +76,7 @@ a {
 
 @keyframes blur-out {
     to {
-        filter: grayscale(0) blur();
+        filter: grayscale(0) blur(0);
         transform: scale(1);
     }
 }

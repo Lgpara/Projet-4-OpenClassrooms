@@ -94,7 +94,6 @@ main .restaurantcard {
 }
 main .restaurantcard .restaurantcard__head {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 42px;
   align-items: baseline;
   padding-top: 32px;
@@ -105,38 +104,77 @@ main .restaurantcard .restaurantcard__head {
     align-items: center;
   }
 }
-main .restaurantcard .restaurantcard__head .heart_icon {
+main .restaurantcard .restaurantcard__head .restaurantcard__head__iconbox {
+  margin: -1px 0 0 62%;
+}
+@media screen and (min-width: 1024px) {
+  main .restaurantcard .restaurantcard__head .restaurantcard__head__iconbox {
+    margin: -18px 0 0 24px;
+  }
+}
+main .restaurantcard .restaurantcard__head .restaurantcard__head__iconbox .restaurantcard__head__iconbox__iconcontainer {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  background-color: #F7F7F7;
+  z-index: 1;
+}
+main .restaurantcard .restaurantcard__head .restaurantcard__head__iconbox .restaurantcard__head__iconbox__iconcontainer:hover {
+  opacity: 0;
+}
+main .restaurantcard .restaurantcard__head .restaurantcard__head__iconbox .restaurantcard__head__iconbox__iconcontainer:hover + .restaurantcard__head__iconbox__fulliconcontainer {
+  opacity: 1;
+}
+main .restaurantcard .restaurantcard__head .restaurantcard__head__iconbox .restaurantcard__head__iconbox__iconcontainer .restaurantcard__head__iconbox__iconcontainer__icon {
   font-size: 21px;
-  margin-left: 24px;
+}
+main .restaurantcard .restaurantcard__head .restaurantcard__head__iconbox .restaurantcard__head__iconbox__fulliconcontainer {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  z-index: 0;
+  opacity: 0.1;
+  transition: opacity 0.35s ease-in-out;
+}
+main .restaurantcard .restaurantcard__head .restaurantcard__head__iconbox .restaurantcard__head__iconbox__fulliconcontainer .restaurantcard__head__iconbox__fulliconcontainer__icon {
+  font-size: 21px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
 }
 main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodinfos {
-  padding: 12px 15px;
   background-color: white;
   margin: 12px 0px;
   border-radius: 15px;
   box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
-  height: 48px;
   overflow: hidden;
 }
-main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodinfos::after {
-  content: "";
-  transition: transform 0.2s ease;
+main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodinfos .restaurantcard__foodlist__foodinfos__title {
+  margin: 12px 0 5px 15px;
 }
-main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodinfos:hover::after {
-  display: flex;
-  font-size: 25px;
-  align-items: center;
-  justify-content: center;
+main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodinfos::before {
   content: "\f058";
-  font-family: "Font Awesome 5 Free";
-  color: white;
   height: 72px;
   width: 72px;
   background-color: #99E2D0;
-  box-sizing: border-box;
+  margin-bottom: -72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-family: "Font Awesome 5 Free";
+  color: white;
   position: relative;
-  top: -60px;
-  left: calc(100% + 15px);
+  top: 0;
+  left: 100%;
+  transition: transform 0.25s ease-in-out;
+}
+main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodinfos:hover::before {
   transform: translate(-72px, 0);
 }
 main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodinfos:hover .restaurantcard__foodlist__foodinfos__details .price {
@@ -145,11 +183,10 @@ main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodin
 main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodinfos .restaurantcard__foodlist__foodinfos__details {
   display: flex;
   justify-content: space-between;
-  margin-top: 5px;
+  margin: 0 15px 12px 15px;
 }
 main .restaurantcard .restaurantcard__foodlist .restaurantcard__foodlist__foodinfos .restaurantcard__foodlist__foodinfos__details .price {
-  transform: translate(0);
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease-in-out;
 }
 
 .pink_button {
