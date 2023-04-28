@@ -28,6 +28,12 @@ $desktop: "screen and (min-width: 1024px)";
     white-space: nowrap;
     text-overflow: ellipsis;    
 }
+@mixin gradientfont {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
+}
 
 /*General*/
 
@@ -60,11 +66,15 @@ h2 {
 .nav_arrow {
     height: 16px;
     position: absolute;
-    left: 24px;
-    top: 40px;
     font-size: 16px;
     color: black;
+    top: 20px;
+    left: 24px;
+    @media #{$desktop} {
+        top: 40px;
+    }
 
+    
     &:visited {
         color: black;
     }
@@ -128,46 +138,32 @@ main {
             margin-bottom: 42px;
             align-items: baseline;
             padding-top: 32px;
-            @media #{$desktop} {
+            justify-content: space-between;
+            @media #{$tablet} {
                 justify-content: center;
                 align-items: center;
             }
 
             .restaurantcard__head__iconbox {
-                margin: -1px 0 0 62%;
-                @media #{$desktop} {
-                    margin: -18px 0 0 24px;
+                display: flex;
+                margin-right: 41px;
+                margin-left: 24px;
+                &:hover .restaurantcard__head__iconbox__icon {
+                    opacity: 0;
                 }
-                .restaurantcard__head__iconbox__iconcontainer {
-                    width: fit-content;
-                    height: fit-content;
-                    position: absolute;
-                    background-color: #F7F7F7;
-                    z-index: 1;
-                    &:hover {
-                        opacity: 0;
-                    }
-                    &:hover + .restaurantcard__head__iconbox__fulliconcontainer{
-                        opacity: 1;
-                    }
-                    .restaurantcard__head__iconbox__iconcontainer__icon {
-                        font-size: 21px;
-                    }
+                &:hover .restaurantcard__head__iconbox__fullicon {
+                    opacity: 1;
                 }
-                .restaurantcard__head__iconbox__fulliconcontainer {
-                    width: fit-content;
-                    height: fit-content;
+                .restaurantcard__head__iconbox__icon {
+                    font-size: 21px;
+
+                }
+                .restaurantcard__head__iconbox__fullicon {
+                    font-size: 21px;
                     position: absolute;
-                    z-index: 0;
-                    opacity: 0.1;
+                    opacity: 0;
+                    @include gradientfont();
                     transition: opacity 0.35s ease-in-out;
-                    .restaurantcard__head__iconbox__fulliconcontainer__icon {
-                        font-size: 21px;
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        color: transparent;
-                        background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda); 
-                    }
                 }
             }
     
@@ -182,6 +178,7 @@ main {
                 overflow: hidden;
                 .restaurantcard__foodlist__foodinfos__title {
                     margin: 12px 0 5px 15px;
+                    @include nowrap_ellipsis();
                 }
                 &::before {
                     content: "\f058";
@@ -203,14 +200,22 @@ main {
                 &:hover::before {
                     transform: translate(-72px, 0);
                 }
+                &:hover .restaurantcard__foodlist__foodinfos__title {
+                    padding-right: 101px;
+                }
                 &:hover .restaurantcard__foodlist__foodinfos__details .price {
                     transform: translate(-72px, 0);
+                    margin-left: 72px;
                 }
                 .restaurantcard__foodlist__foodinfos__details {
                     display: flex;
                     justify-content: space-between;
                     margin: 0 15px 12px 15px;
+                    :first-child {
+                        @include nowrap_ellipsis();
+                    }
                     .price {
+                        display: block;
                         transition: transform 0.25s ease-in-out;
                     }
                 }
