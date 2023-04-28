@@ -292,42 +292,27 @@ header .header__location .header__location__icon {
   margin: 0px 25px 0 13px;
 }
 .restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer {
-  padding: 4px 20px 0 0;
+  margin-top: 4px;
+  display: flex;
 }
-.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox {
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  position: absolute;
-  background-color: white;
-  z-index: 1;
-}
-.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox:hover {
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer:hover .restaurants__cardscontainer__cards__infos__iconcontainer__icon {
   opacity: 0;
 }
-.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox:hover + .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox {
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer:hover .restaurants__cardscontainer__cards__infos__iconcontainer__fullicon {
   opacity: 1;
 }
-.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox__icon {
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__icon {
   font-size: 25px !important;
 }
-.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox {
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  position: absolute;
-  z-index: 0;
-  opacity: 0.1;
-  transition: opacity 0.35s ease-in-out;
-}
-.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox__icon {
+.restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer .restaurants__cardscontainer__cards__infos__iconcontainer__fullicon {
   font-size: 25px !important;
+  opacity: 0;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
+  position: absolute;
+  transition: opacity 0.35s ease-in-out;
 }
 
 footer {

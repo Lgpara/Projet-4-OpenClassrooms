@@ -112,7 +112,7 @@ main .restaurantcard .restaurantcard__head {
 }
 main .restaurantcard .restaurantcard__head .restaurantcard__head__iconbox {
   display: flex;
-  margin-right: 41px;
+  margin-right: 10px;
   margin-left: 24px;
 }
 main .restaurantcard .restaurantcard__head .restaurantcard__head__iconbox:hover .restaurantcard__head__iconbox__icon {

@@ -331,34 +331,23 @@ header {
                     margin: 0px 25px 0 13px;
                 }
                 .restaurants__cardscontainer__cards__infos__iconcontainer {
-                    padding: 4px 20px 0 0;
-                    .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox {
-                        width: fit-content;
-                        height: fit-content;
-                        position: absolute;
-                        background-color: white;
-                        z-index: 1;
-                        &:hover {
-                            opacity: 0;
-                        }
-                        &:hover + .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox {
-                            opacity: 1;
-                        }  
-                        .restaurants__cardscontainer__cards__infos__iconcontainer__iconbox__icon {
-                            font-size: 25px !important;
-                        }
+                    margin-top: 4px;
+                    display: flex;
+                    &:hover .restaurants__cardscontainer__cards__infos__iconcontainer__icon {
+                        opacity: 0;
                     }
-                    .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox {
-                        width: fit-content;
-                        height: fit-content;
+                    &:hover .restaurants__cardscontainer__cards__infos__iconcontainer__fullicon {
+                        opacity: 1;
+                    }
+                    .restaurants__cardscontainer__cards__infos__iconcontainer__icon {
+                        font-size: 25px !important;
+                    }
+                    .restaurants__cardscontainer__cards__infos__iconcontainer__fullicon {
+                        font-size: 25px !important;
+                        opacity: 0;
+                        @include gradientfont();
                         position: absolute;
-                        z-index: 0;
-                        opacity: 0.1;
                         transition: opacity 0.35s ease-in-out;
-                        .restaurants__cardscontainer__cards__infos__iconcontainer__fulliconbox__icon {
-                            font-size: 25px !important;
-                            @include gradientfont();                         
-                        }    
                     }
                 }    
             }
