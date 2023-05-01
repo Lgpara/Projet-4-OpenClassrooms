@@ -6,6 +6,10 @@ $color_3: #89C8FA;
 $color_4: #003A68;
 $color_5: #9356DC;
 
+$lightgrey: #F6F6F6;
+$grey: #EAEAEA;
+$darkgrey: #353535;
+
 $tablet: "screen and (min-width: 768px)";
 $desktop: "screen and (min-width: 1024px)";
 
@@ -46,6 +50,58 @@ $desktop: "screen and (min-width: 1024px)";
 }
 
 
+
+.test {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 99;
+    background-color: rgba(234, 234, 234, 0.95);
+    animation: endload 2s ease forwards;
+    p {
+        font-family: "Shrikhand";
+        font-size: 12vw;
+        padding-bottom: 20vh;
+        color: $darkgrey;
+        animation: pulse 1.5s ease-in-out;
+    }
+}
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		text-shadow: 0 0 0px $darkgrey;
+	}
+
+	70% {
+		transform: scale(1);
+		text-shadow: 0 30px 40px $darkgrey;
+	}
+
+	100% {
+		transform: scale(0.95);
+		text-shadow: 0 0 0 $darkgrey;
+	}
+}
+@keyframes endload {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+
+
+
 /* General */
 body {
     overflow-x: hidden;
@@ -72,20 +128,6 @@ a {
 }
 
 
-.blocpage {
-    transform: scale(1.2);
-    filter: grayscale(1) blur(30px);
-    animation: blur-out 0.5s ease-in-out forwards;
-    animation-delay: 0.4s;
-}
-
-
-@keyframes blur-out {
-    to {
-        filter: grayscale(0) blur(0);
-        transform: scale(1);
-    }
-}
 
 
 /* Header */
@@ -109,13 +151,13 @@ header {
     }
 
     .header__location {
-        background-color: #EAEAEA;
+        background-color: $grey;
         display: flex;
         align-items: baseline;
         justify-content: center;
         padding: 15.5px 0;
         font-size: 16px;
-        color: #353535;
+        color: $darkgrey;
 
         .header__location__icon {
             margin-right: 17px;
@@ -129,7 +171,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: whitesmoke;
+    background: $lightgrey;
     text-align: center;
 
     .reservation__title {
@@ -207,7 +249,7 @@ header {
                 width: 95%;
                 margin: auto;
                 padding: 28px 0px;
-                background-color: whitesmoke;
+                background-color: $lightgrey;
                 border-radius: 20px;
                 box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
                 margin-bottom: 24px;
@@ -264,7 +306,7 @@ header {
 
 .restaurants {
     padding: 54px 20px 66px 20px;
-    background-color: whitesmoke;
+    background-color: $lightgrey;
 
     @media #{$desktop} {
         padding: 30px 13% 66px 13%;
@@ -357,7 +399,7 @@ header {
 
 footer {
     color: white;
-    background-color: #353535;
+    background-color: $darkgrey;
 
     @media #{$tablet} {
         text-align: center;
@@ -467,13 +509,13 @@ footer {
 .loader {
     position: absolute;
     z-index: 99;
-    top: calc(97vh - 40px);
+    top: calc(97vh - 20px);
     right: 3vh;
     display: flex;
     justify-content: center;
     align-items: center;
     .icon {
-        font-size: 40px;
+        font-size: 20px;
         @include gradientfont();
         animation: ustensils 0.8s ease;
         opacity: 0;
