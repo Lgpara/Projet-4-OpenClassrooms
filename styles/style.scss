@@ -51,7 +51,7 @@ $desktop: "screen and (min-width: 1024px)";
 
 
 
-.test {
+.loader {
     width: 100vw;
     height: 100%;
     display: flex;
@@ -103,9 +103,6 @@ $desktop: "screen and (min-width: 1024px)";
 
 
 /* General */
-body {
-    overflow-x: hidden;
-}
 * {
     margin: 0;
     padding: 0;
@@ -218,6 +215,7 @@ header {
     width: 100%;
 
     @media #{$desktop} {
+        width: 76%;
         padding: 50px 13%;
     }
 
@@ -240,7 +238,7 @@ header {
 
             @media #{$desktop} {
                 flex-direction: row;
-                width: 74%;
+                width: 98%;
                 justify-content: space-between;
             }
 
@@ -505,41 +503,3 @@ footer {
     }
 }
 
-
-.loader {
-    position: absolute;
-    z-index: 99;
-    top: calc(97vh - 20px);
-    right: 3vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .icon {
-        font-size: 20px;
-        @include gradientfont();
-        animation: ustensils 0.8s ease;
-        opacity: 0;
-    }
-}
-@keyframes ustensils{
-    0% {
-        transform: scale(1);
-        opacity: 1;
-        text-shadow: 0 0 0 lighten($color_5, 10%);
-    }
-    50% {
-        transform: scale(1.3);
-        opacity: 1;
-        text-shadow: 0 0 5px lighten($color_5, 10%);
-    }
-    75% {
-        transform: scale(1.2);
-        opacity: 0.5;
-        text-shadow: 0 0 25px lighten($color_5, 10%);
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0;
-        text-shadow: 0 0 10px lighten($color_5, 20%);
-    }
-}
