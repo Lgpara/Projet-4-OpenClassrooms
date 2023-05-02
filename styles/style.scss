@@ -53,19 +53,25 @@ $desktop: "screen and (min-width: 1024px)";
 
 .loader {
     width: 100vw;
-    height: 100%;
+    height: 2279px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     position: absolute;
     z-index: 99;
     background-color: rgba(234, 234, 234, 0.95);
     animation: endload 2s ease forwards;
+    @media #{$tablet} {
+        height: 2575px;
+    }
+    @media #{$desktop} {
+        height: 1409px;
+    }
     p {
         font-family: "Shrikhand";
         font-size: 12vw;
-        padding-bottom: 20vh;
+        padding-top: 34vh;
+        // padding-bottom: 20vh;
         color: $darkgrey;
         animation: pulse 1.5s ease-in-out;
     }
@@ -103,6 +109,7 @@ $desktop: "screen and (min-width: 1024px)";
 
 
 /* General */
+
 * {
     margin: 0;
     padding: 0;

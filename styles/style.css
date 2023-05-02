@@ -2,20 +2,29 @@
 /* Mixin */
 .loader {
   width: 100vw;
-  height: 100%;
+  height: 2279px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   position: absolute;
   z-index: 99;
   background-color: rgba(234, 234, 234, 0.95);
   animation: endload 2s ease forwards;
 }
+@media screen and (min-width: 768px) {
+  .loader {
+    height: 2575px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .loader {
+    height: 1409px;
+  }
+}
 .loader p {
   font-family: "Shrikhand";
   font-size: 12vw;
-  padding-bottom: 20vh;
+  padding-top: 34vh;
   color: #353535;
   animation: pulse 1.5s ease-in-out;
 }
