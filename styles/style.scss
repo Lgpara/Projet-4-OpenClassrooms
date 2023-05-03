@@ -23,7 +23,7 @@ $desktop: "screen and (min-width: 1024px)";
     font-size: 16px;
     line-height: 19px;
     background-image: linear-gradient(to top, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     border: none;
 }
@@ -42,6 +42,7 @@ $desktop: "screen and (min-width: 1024px)";
     width: fit-content;
     border-radius: 2px;
 }
+
 @mixin gradientfont {
     background-clip: text;
     -webkit-background-clip: text;
@@ -49,64 +50,39 @@ $desktop: "screen and (min-width: 1024px)";
     background-image: linear-gradient(to bottom, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
 }
 
+/* Keyframes */
 
-
-.loader {
-    width: 100vw;
-    height: 2279px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    z-index: 99;
-    background-color: rgba(234, 234, 234, 0.95);
-    animation: endload 2s ease forwards;
-    @media #{$tablet} {
-        height: 2575px;
-    }
-    @media #{$desktop} {
-        height: 1409px;
-    }
-    p {
-        font-family: "Shrikhand";
-        font-size: 12vw;
-        padding-top: 34vh;
-        // padding-bottom: 20vh;
-        color: $darkgrey;
-        animation: pulse 1.5s ease-in-out;
-    }
-}
 @keyframes pulse {
-	0% {
-		transform: scale(0.95);
-		text-shadow: 0 0 0px $darkgrey;
-	}
+    0% {
+        transform: scale(0.95);
+        text-shadow: 0 0 0 $darkgrey;
+    }
 
-	70% {
-		transform: scale(1);
-		text-shadow: 0 30px 40px $darkgrey;
-	}
+    70% {
+        transform: scale(1);
+        text-shadow: 0 30px 40px $darkgrey;
+    }
 
-	100% {
-		transform: scale(0.95);
-		text-shadow: 0 0 0 $darkgrey;
-	}
+    100% {
+        transform: scale(0.95);
+        text-shadow: 0 0 0 $darkgrey;
+    }
 }
+
 @keyframes endload {
     0% {
         opacity: 1;
     }
+
     80% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
         pointer-events: none;
     }
 }
-
-
-
 
 /* General */
 
@@ -131,8 +107,35 @@ a {
     font-weight: 900;
 }
 
+/* Loader */
 
+.loader {
+    width: 100vw;
+    height: 2279px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 99;
+    background-color: rgba(234, 234, 234, 0.95);
+    animation: endload 2s ease forwards;
 
+    @media #{$tablet} {
+        height: 2575px;
+    }
+
+    @media #{$desktop} {
+        height: 1409px;
+    }
+
+    p {
+        font-family: "Shrikhand";
+        font-size: 12vw;
+        padding-top: 34vh;
+        color: $darkgrey;
+        animation: pulse 1.5s ease-in-out;
+    }
+}
 
 /* Header */
 
@@ -199,10 +202,11 @@ header {
         margin-bottom: 57px;
         transform: scale(1);
         transition: all 0.22s ease-in-out;
+
         &:hover {
-            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
             opacity: 0.8;
-            transform: scale(1.01); 
+            transform: scale(1.01);
         }
 
         @media #{$desktop} {
@@ -256,7 +260,7 @@ header {
                 padding: 28px 0px;
                 background-color: $lightgrey;
                 border-radius: 20px;
-                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
                 margin-bottom: 24px;
                 align-items: center;
 
@@ -333,7 +337,7 @@ header {
         .restaurants__cardscontainer__cards {
             border-radius: 15px;
             overflow: hidden;
-            margin: 18px 0px;
+            margin: 18px 0;
 
             &:active {
                 color: black;
@@ -342,9 +346,11 @@ header {
             &:visited {
                 color: black;
             }
+
             @media #{$desktop} {
                 margin: 0;
             }
+
             .restaurants__cardscontainer__cards__newgreenstamp {
                 @include newgreenstamp();
             }
@@ -375,20 +381,25 @@ header {
                 padding: 16px 25px 12px 13px;
 
                 .restaurants__cardscontainer__cards__infos__txt {
-                    margin: 0px 25px 0 13px;
+                    margin: 0 25px 0 13px;
                 }
+
                 .restaurants__cardscontainer__cards__infos__iconcontainer {
                     margin-top: 4px;
                     display: flex;
+
                     &:hover .restaurants__cardscontainer__cards__infos__iconcontainer__icon {
                         opacity: 0;
                     }
+
                     &:hover .restaurants__cardscontainer__cards__infos__iconcontainer__fullicon {
                         opacity: 1;
                     }
+
                     .restaurants__cardscontainer__cards__infos__iconcontainer__icon {
                         font-size: 25px !important;
                     }
+
                     .restaurants__cardscontainer__cards__infos__iconcontainer__fullicon {
                         font-size: 25px !important;
                         opacity: 0;
@@ -396,7 +407,7 @@ header {
                         position: absolute;
                         transition: opacity 0.35s ease-in-out;
                     }
-                }    
+                }
             }
         }
     }
@@ -418,7 +429,7 @@ footer {
     }
 
     a {
-        color: white !important;
+        color: white;
     }
 
     .footercontentcontainer {
@@ -432,7 +443,7 @@ footer {
         .footercontentcontainer__logo {
             height: 18px;
             filter: invert(1);
-            margin: 25px 0px 23px 22px;
+            margin: 25px 0 23px 22px;
 
             @media #{$desktop} {
                 height: 18px;
@@ -456,7 +467,8 @@ footer {
                 margin-bottom: 7px;
 
                 @media #{$desktop} {
-                    margin: 0px 10px;
+                    margin: 0 10px;
+
                     &--placementajust {
                         margin-right: 50px;
                     }
@@ -472,6 +484,7 @@ footer {
                 @media #{$desktop} {
                     margin: 0px 10px;
                 }
+
                 &--marginajust {
                     margin-right: 10px;
                     margin-bottom: 6px;
@@ -482,7 +495,7 @@ footer {
 }
 
 
-/**    **/
+/* Grid setup for restaurant's cards (desktop) */
 
 @media #{$desktop} {
     .grid_element_1 {
@@ -509,4 +522,3 @@ footer {
         margin-top: -68px;
     }
 }
-

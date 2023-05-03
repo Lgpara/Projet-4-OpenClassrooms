@@ -1,38 +1,10 @@
 /* Variables */
 /* Mixin */
-.loader {
-  width: 100vw;
-  height: 2279px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  z-index: 99;
-  background-color: rgba(234, 234, 234, 0.95);
-  animation: endload 2s ease forwards;
-}
-@media screen and (min-width: 768px) {
-  .loader {
-    height: 2575px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .loader {
-    height: 1409px;
-  }
-}
-.loader p {
-  font-family: "Shrikhand";
-  font-size: 12vw;
-  padding-top: 34vh;
-  color: #353535;
-  animation: pulse 1.5s ease-in-out;
-}
-
+/* Keyframes */
 @keyframes pulse {
   0% {
     transform: scale(0.95);
-    text-shadow: 0 0 0px #353535;
+    text-shadow: 0 0 0 #353535;
   }
   70% {
     transform: scale(1);
@@ -75,6 +47,36 @@ a {
 
 .bold {
   font-weight: 900;
+}
+
+/* Loader */
+.loader {
+  width: 100vw;
+  height: 2279px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 99;
+  background-color: rgba(234, 234, 234, 0.95);
+  animation: endload 2s ease forwards;
+}
+@media screen and (min-width: 768px) {
+  .loader {
+    height: 2575px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .loader {
+    height: 1409px;
+  }
+}
+.loader p {
+  font-family: "Shrikhand";
+  font-size: 12vw;
+  padding-top: 34vh;
+  color: #353535;
+  animation: pulse 1.5s ease-in-out;
 }
 
 /* Header */
@@ -140,7 +142,7 @@ header .header__location .header__location__icon {
   font-size: 16px;
   line-height: 19px;
   background-image: linear-gradient(to top, #a35bdb, #b45fdb, #c464db, #d369da, #e16fda);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   border: none;
   margin-bottom: 57px;
@@ -148,7 +150,7 @@ header .header__location .header__location__icon {
   transition: all 0.22s ease-in-out;
 }
 .reservation .reservation__btn:hover {
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   opacity: 0.8;
   transform: scale(1.01);
 }
@@ -201,7 +203,7 @@ header .header__location .header__location__icon {
   padding: 28px 0px;
   background-color: #F6F6F6;
   border-radius: 20px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   margin-bottom: 24px;
   align-items: center;
 }
@@ -273,7 +275,7 @@ header .header__location .header__location__icon {
 .restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards {
   border-radius: 15px;
   overflow: hidden;
-  margin: 18px 0px;
+  margin: 18px 0;
 }
 .restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards:active {
   color: black;
@@ -328,7 +330,7 @@ header .header__location .header__location__icon {
   padding: 16px 25px 12px 13px;
 }
 .restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__txt {
-  margin: 0px 25px 0 13px;
+  margin: 0 25px 0 13px;
 }
 .restaurants .restaurants__cardscontainer .restaurants__cardscontainer__cards .restaurants__cardscontainer__cards__infos .restaurants__cardscontainer__cards__infos__iconcontainer {
   margin-top: 4px;
@@ -372,7 +374,7 @@ footer {
   }
 }
 footer a {
-  color: white !important;
+  color: white;
 }
 @media screen and (min-width: 1024px) {
   footer .footercontentcontainer {
@@ -386,7 +388,7 @@ footer a {
 footer .footercontentcontainer .footercontentcontainer__logo {
   height: 18px;
   filter: invert(1);
-  margin: 25px 0px 23px 22px;
+  margin: 25px 0 23px 22px;
 }
 @media screen and (min-width: 1024px) {
   footer .footercontentcontainer .footercontentcontainer__logo {
@@ -412,7 +414,7 @@ footer .footercontentcontainer .footercontentcontainer__linkscontainer .footerco
 }
 @media screen and (min-width: 1024px) {
   footer .footercontentcontainer .footercontentcontainer__linkscontainer .footercontentcontainer__linkscontainer__iconlink {
-    margin: 0px 10px;
+    margin: 0 10px;
   }
   footer .footercontentcontainer .footercontentcontainer__linkscontainer .footercontentcontainer__linkscontainer__iconlink--placementajust {
     margin-right: 50px;
@@ -432,7 +434,7 @@ footer .footercontentcontainer .footercontentcontainer__linkscontainer .footerco
   margin-bottom: 6px;
 }
 
-/**    **/
+/* Grid setup for restaurant's cards (desktop) */
 @media screen and (min-width: 1024px) {
   .grid_element_1 {
     grid-column: 1/2;
